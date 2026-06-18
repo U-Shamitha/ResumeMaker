@@ -1,0 +1,69 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  background: linear-gradient(135deg, #2c3e5a 0%, #34495e 100%);
+  color: #ecf0f1;
+  padding: 16px 24px;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #27ae60;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+@media print {
+  .topbar, .notification, .editor {
+    display: none !important;
+  }
+  .container {
+    padding: 0;
+    gap: 0;
+  }
+  .preview {
+    flex: 1;
+  }
+}

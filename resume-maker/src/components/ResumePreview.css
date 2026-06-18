@@ -1,0 +1,324 @@
+.preview {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.resume {
+  background: white;
+  width: 825px;
+  padding: 40px;
+  min-height: 1000px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  line-height: 1.5;
+  color: #2c3e50;
+  font-size: 11px;
+}
+
+/* Editable Elements */
+.editable {
+  cursor: text;
+  position: relative;
+  padding: 2px 4px;
+  border-radius: 2px;
+  outline: none;
+}
+
+.editable:hover {
+  background: rgba(44, 62, 90, 0.05);
+  transition: background 0.15s;
+}
+
+.editable:focus {
+  background: rgba(44, 62, 90, 0.12);
+  outline: 1px solid #2c3e5a;
+  outline-offset: 1px;
+}
+
+/* Header Styles */
+.res-header {
+  padding-bottom: 16px;
+  border-bottom: 2px solid #2c3e5a;
+  margin-bottom: 14px;
+}
+
+.res-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a2332;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.res-title {
+  font-size: 13px;
+  color: #34495e;
+  font-weight: 600;
+  margin: 2px 0;
+}
+
+.res-contact {
+  font-size: 11px;
+  color: #5a6c7d;
+  margin-top: 4px;
+}
+
+.res-relocation {
+  font-size: 11px;
+  color: #5a6c7d;
+  margin-top: 2px;
+}
+
+.res-section {
+  margin-bottom: 14px;
+}
+
+.res-section h2 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2c3e5a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e9ecef;
+  margin: 0 0 8px 0;
+}
+
+.res-section p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 11px;
+  color: #2c3e50;
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-pill {
+  background: #ecf0f1;
+  color: #2c3e50;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-block;
+  border: 1px solid #d5dbdd;
+  cursor: text;
+}
+
+.skill-pill:hover {
+  background: #dfe6e9;
+}
+
+.skill-pill:focus {
+  outline: 1px solid #2c3e5a;
+}
+
+/* Experience */
+.exp-entry {
+  margin-bottom: 10px;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+  gap: 10px;
+}
+
+.exp-header > div {
+  flex: 1;
+}
+
+.exp-role {
+  font-weight: 700;
+  color: #1a2332;
+  font-size: 11px;
+}
+
+.exp-company {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 11px;
+}
+
+.exp-dates {
+  font-style: italic;
+  color: #5a6c7d;
+  font-size: 10px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.exp-location {
+  color: #5a6c7d;
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.exp-desc {
+  color: #2c3e50;
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Education */
+.edu-entry {
+  margin-bottom: 8px;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.edu-header > div {
+  flex: 1;
+}
+
+.edu-degree {
+  font-weight: 700;
+  color: #1a2332;
+  font-size: 11px;
+}
+
+.edu-dates {
+  font-style: italic;
+  color: #5a6c7d;
+  font-size: 10px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.edu-note {
+  color: #5a6c7d;
+  font-style: italic;
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+/* Button Styles for Add/Delete */
+.skill-item,
+.exp-entry-wrapper,
+.edu-entry-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.skill-item {
+  align-items: center;
+}
+
+/* Draggable items */
+.skill-item[draggable="true"],
+.exp-entry-wrapper[draggable="true"],
+.edu-entry-wrapper[draggable="true"] {
+  cursor: grab;
+}
+
+.skill-item[draggable="true"]:active,
+.exp-entry-wrapper[draggable="true"]:active,
+.edu-entry-wrapper[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.skill-item.dragging,
+.exp-entry-wrapper.dragging,
+.edu-entry-wrapper.dragging {
+  opacity: 0.5;
+  background: rgba(44, 62, 90, 0.08);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.btn-delete-mini,
+.btn-delete-entry,
+.btn-add-mini {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-delete-mini:hover,
+.btn-delete-entry:hover {
+  background: #ff5252;
+}
+
+.btn-add-mini {
+  background: #51cf66;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.btn-add-mini:hover {
+  background: #40c057;
+}
+
+@media (max-width: 1024px) {
+  .preview {
+    padding: 16px;
+  }
+
+  .resume {
+    width: 100%;
+    padding: 24px;
+    min-height: auto;
+  }
+}
+
+@media print {
+  .preview {
+    padding: 0;
+  }
+
+  .resume {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    min-height: auto;
+  }
+
+  .editable {
+    padding: 0 !important;
+    background: none !important;
+    outline: none !important;
+  }
+
+  .editable:hover,
+  .editable:focus {
+    background: none !important;
+    outline: none !important;
+  }
+
+  .btn-delete-mini,
+  .btn-delete-entry,
+  .btn-add-mini {
+    display: none !important;
+  }
+}
